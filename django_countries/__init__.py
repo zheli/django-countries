@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 from __future__ import unicode_literals
 from itertools import islice
+import six
 
 from django_countries.conf import settings
-from django.utils import six
 from django.utils.encoding import force_text
 from django.utils.translation import override
 
