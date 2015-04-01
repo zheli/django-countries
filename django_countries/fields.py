@@ -7,7 +7,14 @@ except ImportError:
 
 from django import forms
 from django.db.models.fields import CharField, BLANK_CHOICE_DASH
-from django.utils.encoding import force_text, python_2_unicode_compatible
+
+try:
+    from django.utils.encoding import force_text, python_2_unicode_compatible
+except ImportError: # Django 1.3
+    from django.utils.encoding import force_unicode as force_text
+    from utils.encoding import python_2_unicode_compatible
+
+from django.utils.encoding import python_2_unicode_compatible
 from django.utils.functional import lazy
 
 from django_countries import countries, ioc_data, widgets
