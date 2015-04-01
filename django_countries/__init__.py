@@ -6,10 +6,10 @@ import six
 from django_countries.conf import settings
 try:   
     from django.utils.encoding import force_text
+    from django.utils.translation import override
 except ImportError: # Django 1.3
     from django.utils.encoding import force_unicode as force_text
-
-from django.utils.translation import override
+    from utils.translation import override
 
 try:
     import pyuca
