@@ -4,7 +4,11 @@ from itertools import islice
 import six
 
 from django_countries.conf import settings
-from django.utils.encoding import force_text
+try:   
+    from django.utils.encoding import force_text
+except ImportError: # Django 1.3
+    from django.utils.encoding import force_unicode as force_text
+
 from django.utils.translation import override
 
 try:
